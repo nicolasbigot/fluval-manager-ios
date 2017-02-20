@@ -15,7 +15,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        if let navigationController = window?.rootViewController as? UINavigationController,
+            let viewController = navigationController.topViewController as? LightsModuleViewController {
+            let settingsManager = SettingsManager()
+            viewController.lightsModule = LightsModule(settingsManager: settingsManager)
+            viewController.settingsManager = settingsManager
+        }
         return true
     }
 

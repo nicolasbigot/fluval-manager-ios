@@ -1,0 +1,3 @@
+[submodule "fluval-manager/Vendor/Alamofire"]
+	path = fluval-manager/Vendor/Alamofire
+	url = https://github.com/Alamofire/Alamofire.git
