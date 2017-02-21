@@ -9,32 +9,12 @@
 import Foundation
 import UIKit
 
-final class LightsModuleViewController: UIViewController {
+final class LightsModuleViewController: ModuleViewController {
     
-    var settingsManager: SettingsManager!
     var lightsModule: LightsModule!
-    private static let showSettingsViewControllerIdentifier = "ShowSettingsViewController"
     @IBOutlet private weak var statusLabel: UILabel!
     @IBOutlet private weak var modeLabel: UILabel!
     @IBOutlet private weak var stateLabel: UILabel!
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == type(of: self).showSettingsViewControllerIdentifier {
-            if let navigationController = segue.destination as? UINavigationController,
-                let viewController = navigationController.topViewController as? SettingsViewController {
-                viewController.settingsManager = settingsManager
-            }
-        }
-    }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        
-        if !settingsManager.isSetup {
-            performSegue(withIdentifier: type(of: self).showSettingsViewControllerIdentifier, sender: nil)
-        }
-        refreshButtonPressed()
-    }
     
     // MARK: - Actions
     
@@ -89,4 +69,11 @@ final class LightsModuleViewController: UIViewController {
             self.statusLabel.text = "\(module.status)"
         }
     }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        refreshButtonPressed()
+    }
+    
 }

@@ -16,10 +16,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         if let navigationController = window?.rootViewController as? UINavigationController,
-            let viewController = navigationController.topViewController as? LightsModuleViewController {
+            let viewController = navigationController.topViewController as? DashboardViewController {
+            // build library
             let settingsManager = SettingsManager()
-            viewController.lightsModule = LightsModule(settingsManager: settingsManager)
-            viewController.settingsManager = settingsManager
+            
+            // lights module
+            let lightsModule = LightsModule(settingsManager: settingsManager)
+            let lightsModuleViewController = viewController.storyboard?.instantiateViewController(withIdentifier: "LightsModuleViewController") as! LightsModuleViewController
+            lightsModuleViewController.lightsModule = lightsModule
+            
+            // build dashboard
+            viewController.settingsManager = SettingsManager()
+            viewController.modulesViewControllers = [lightsModuleViewController]
         }
         return true
     }
