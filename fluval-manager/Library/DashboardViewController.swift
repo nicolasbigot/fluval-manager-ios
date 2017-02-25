@@ -49,7 +49,7 @@ final class DashboardViewController: UIViewController {
         for controller in modulesViewControllers {
             addChildViewController(controller)
             scrollView.addSubview(controller.view)
-            controller.view.frame = CGRect(x: 0, y: previousController?.view.bounds.height ?? 0, width: scrollView.bounds.width, height: 160)
+            controller.view.frame = CGRect(x: 0, y: previousController?.view.bounds.height ?? 0, width: scrollView.bounds.width, height: 140)
             previousController = controller
             totalHeight += controller.view.bounds.height
         }

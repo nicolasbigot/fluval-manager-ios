@@ -15,9 +15,9 @@ enum LightsState: Int, CustomStringConvertible {
     
     var description: String {
         switch self {
-        case .off: return "off"
-        case .white: return "white"
-        case .blue: return "blue"
+        case .off: return "OFF"
+        case .white: return "White"
+        case .blue: return "Blue"
         }
     }
 }
@@ -28,13 +28,13 @@ enum LightsMode: Int, CustomStringConvertible {
     
     var description: String {
         switch self {
-        case .automatic: return "automatic"
-        case .manual: return "manual"
+        case .automatic: return "Automatic"
+        case .manual: return "Manual"
         }
     }
 }
 
-struct LightsAPISchedule {
+struct LightsSchedule {
     
     let duration: Int
     let states: [LightsState]
@@ -54,24 +54,25 @@ struct LightsAPISchedule {
     
 }
 
-struct LightsAPIModule {
+struct LightsModule: JSONInitializable {
     
-    let status: Bool
+    let status: ModuleStatus
     let mode: LightsMode?
     let state: LightsState?
-    let schedule: LightsAPISchedule
+    let schedule: LightsSchedule
     
     init?(fromJSON json: [String: AnyObject]) {
-        guard let status = json["status"] as? NSNumber,
+        guard let statusNumber = json["status"] as? NSNumber,
+            let status = ModuleStatus(rawValue: statusNumber.intValue),
             let scheduleJSON = json["schedule"] as? [String: AnyObject],
-            let schedule = LightsAPISchedule(fromJSON: scheduleJSON)
+            let schedule = LightsSchedule(fromJSON: scheduleJSON)
             else {
                 return nil
         }
         
         self.mode = LightsMode(rawValue: (json["mode"] as? NSNumber)?.intValue ?? -1)
         self.state = LightsState(rawValue: (json["state"] as? NSNumber)?.intValue ?? -1)
-        self.status = status.boolValue
+        self.status = status
         self.schedule = schedule
     }
     

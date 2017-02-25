@@ -20,14 +20,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             // build library
             let settingsManager = SettingsManager()
             
-            // lights module
-            let lightsModule = LightsModule(settingsManager: settingsManager)
+            // lights
+            let lightsEndpoint = LightsEndpoint(settingsManager: settingsManager)
             let lightsModuleViewController = viewController.storyboard?.instantiateViewController(withIdentifier: "LightsModuleViewController") as! LightsModuleViewController
-            lightsModuleViewController.lightsModule = lightsModule
+            lightsModuleViewController.lightsEndpoint = lightsEndpoint
+            
+            // filter
+            let filterEndpoint = FilterEndpoint(settingsManager: settingsManager)
+            let filterModuleViewController = viewController.storyboard?.instantiateViewController(withIdentifier: "FilterModuleViewController") as! FilterModuleViewController
+            filterModuleViewController.filterEndpoint = filterEndpoint
             
             // build dashboard
             viewController.settingsManager = SettingsManager()
-            viewController.modulesViewControllers = [lightsModuleViewController]
+            viewController.modulesViewControllers = [lightsModuleViewController, filterModuleViewController]
         }
         return true
     }

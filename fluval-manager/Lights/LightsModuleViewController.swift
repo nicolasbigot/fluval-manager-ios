@@ -11,7 +11,7 @@ import UIKit
 
 final class LightsModuleViewController: ModuleViewController {
     
-    var lightsModule: LightsModule!
+    var lightsEndpoint: LightsEndpoint!
     @IBOutlet private weak var statusLabel: UILabel!
     @IBOutlet private weak var modeLabel: UILabel!
     @IBOutlet private weak var stateLabel: UILabel!
@@ -19,54 +19,55 @@ final class LightsModuleViewController: ModuleViewController {
     // MARK: - Actions
     
     @IBAction private func refreshButtonPressed() {
-        _ = lightsModule.fetch { module in
+        _ = lightsEndpoint.fetch { module in
             self.updateUI(module: module)
         }
     }
 
     @IBAction private func whiteButtonPressed() {
-        _ = lightsModule.switchToManualMode(state: .white) { module in
+        _ = lightsEndpoint.switchToManualMode(state: .white) { module in
             self.updateUI(module: module)
         }
     }
     
     @IBAction private func blueButtonPressed() {
-        _ = lightsModule.switchToManualMode(state: .blue) { module in
+        _ = lightsEndpoint.switchToManualMode(state: .blue) { module in
             self.updateUI(module: module)
         }
     }
     
     @IBAction private func automaticButtonPressed() {
-        _ = lightsModule.switchToAutomaticMode { module in
+        _ = lightsEndpoint.switchToAutomaticMode { module in
             self.updateUI(module: module)
         }
     }
     
     @IBAction private func offButtonPressed() {
-        _ = lightsModule.switchToManualMode(state: .off) { module in
+        _ = lightsEndpoint.switchToManualMode(state: .off) { module in
             self.updateUI(module: module)
         }
     }
     
     @IBAction private func startButtonPressed() {
-        _ = lightsModule.start { module in
+        _ = lightsEndpoint.start { module in
             self.updateUI(module: module)
         }
     }
     
     @IBAction private func stopButtonPressed() {
-        _ = lightsModule.stop { module in
+        _ = lightsEndpoint.stop { module in
             self.updateUI(module: module)
         }
     }
     
     // MARK : - View
 
-    private func updateUI(module: LightsAPIModule?) {
+    private func updateUI(module: LightsModule?) {
         if let module = module {
-            self.modeLabel.text = "\(module.mode)"
-            self.stateLabel.text = "\(module.state)"
-            self.statusLabel.text = "\(module.status)"
+            self.modeLabel.text = module.mode != nil ? module.mode!.description : "--"
+            self.stateLabel.text = module.state != nil ? module.state!.description : "--"
+            self.statusLabel.text = module.status.description
+            module.status == .started ? enableUI() : disableUI()
         }
     }
     

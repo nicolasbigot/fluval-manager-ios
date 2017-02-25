@@ -12,12 +12,10 @@ import UIKit
 class ModuleViewController: UIViewController {
     
     func disableUI() {
-        self.view.isUserInteractionEnabled = false
         self.view.alpha = 0.5
     }
     
     func enableUI() {
-        self.view.isUserInteractionEnabled = true
         self.view.alpha = 1.0
     }
     

@@ -297,5 +297,77 @@
             </objects>
             <point key="canvasLocation" x="1416.8" y="142.57871064467767"/>
         </scene>
+        <!--Filter Module View Controller-->
+        <scene sceneID="ZJz-bY-1Sc">
+            <objects>
+                <viewController storyboardIdentifier="FilterModuleViewController" id="XbF-MQ-mgp" customClass="FilterModuleViewController" customModule="fluval_manager" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="8MJ-d2-zR8"/>
+                        <viewControllerLayoutGuide type="bottom" id="OaM-kz-JqC"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="da4-au-wDZ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="155"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Filter" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5jR-hf-nDd">
+                                <rect key="frame" x="16" y="8" width="44" height="27"/>
+                                <fontDescription key="fontDescription" type="system" weight="thin" pointSize="22"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="_state_" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x1U-9g-rZV">
+                                <rect key="frame" x="304" y="11" width="55" height="21"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kob-rT-HMp">
+                                <rect key="frame" x="68" y="7" width="53" height="30"/>
+                                <state key="normal" title="Refresh"/>
+                                <connections>
+                                    <action selector="refreshButtonPressed" destination="XbF-MQ-mgp" eventType="touchUpInside" id="QMV-XN-nye"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gH4-Tc-2fk">
+                                <rect key="frame" x="16" y="43" width="34" height="30"/>
+                                <state key="normal" title="Start"/>
+                                <connections>
+                                    <action selector="startButtonPressed" destination="XbF-MQ-mgp" eventType="touchUpInside" id="51r-p2-y5B"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g3k-21-qEz">
+                                <rect key="frame" x="58" y="43" width="32" height="30"/>
+                                <state key="normal" title="Stop"/>
+                                <connections>
+                                    <action selector="stopButtonPressed" destination="XbF-MQ-mgp" eventType="touchUpInside" id="F4O-gh-qKf"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="gH4-Tc-2fk" firstAttribute="top" secondItem="5jR-hf-nDd" secondAttribute="bottom" constant="8" symbolic="YES" id="CBR-lm-ifr"/>
+                            <constraint firstItem="gH4-Tc-2fk" firstAttribute="leading" secondItem="5jR-hf-nDd" secondAttribute="leading" id="HtI-B6-h7r"/>
+                            <constraint firstItem="5jR-hf-nDd" firstAttribute="leading" secondItem="da4-au-wDZ" secondAttribute="leadingMargin" id="Kdk-9K-plb"/>
+                            <constraint firstItem="x1U-9g-rZV" firstAttribute="trailing" secondItem="da4-au-wDZ" secondAttribute="trailingMargin" id="L3a-I0-iJB"/>
+                            <constraint firstItem="5jR-hf-nDd" firstAttribute="centerY" secondItem="x1U-9g-rZV" secondAttribute="centerY" id="Prd-Wy-gNh"/>
+                            <constraint firstItem="g3k-21-qEz" firstAttribute="leading" secondItem="gH4-Tc-2fk" secondAttribute="trailing" constant="8" symbolic="YES" id="SLg-oc-J1F"/>
+                            <constraint firstItem="5jR-hf-nDd" firstAttribute="top" secondItem="8MJ-d2-zR8" secondAttribute="bottom" constant="8" symbolic="YES" id="VvA-Sg-o66"/>
+                            <constraint firstItem="Kob-rT-HMp" firstAttribute="baseline" secondItem="x1U-9g-rZV" secondAttribute="baseline" id="aKY-TB-hIl"/>
+                            <constraint firstItem="gH4-Tc-2fk" firstAttribute="baseline" secondItem="g3k-21-qEz" secondAttribute="baseline" id="ebZ-L8-cMo"/>
+                            <constraint firstItem="Kob-rT-HMp" firstAttribute="leading" secondItem="5jR-hf-nDd" secondAttribute="trailing" constant="8" symbolic="YES" id="xKq-6U-T8q"/>
+                        </constraints>
+                    </view>
+                    <nil key="simulatedStatusBarMetrics"/>
+                    <nil key="simulatedTopBarMetrics"/>
+                    <nil key="simulatedBottomBarMetrics"/>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="375" height="155"/>
+                    <connections>
+                        <outlet property="statusLabel" destination="x1U-9g-rZV" id="g4x-ka-Bsg"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SOz-D8-XFo" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="412" y="733"/>
+        </scene>
     </scenes>
 </document>

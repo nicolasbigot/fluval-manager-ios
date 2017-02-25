@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3716748A1E620CE400D5B779 /* ModuleEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 371674891E620CE400D5B779 /* ModuleEndpoint.swift */; };
+		3716749C1E620F2C00D5B779 /* FilterEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3716749B1E620F2C00D5B779 /* FilterEndpoint.swift */; };
+		3716749E1E620F5500D5B779 /* FilterModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3716749D1E620F5500D5B779 /* FilterModels.swift */; };
+		371674A01E6210D100D5B779 /* JSONInitializable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3716749F1E6210D100D5B779 /* JSONInitializable.swift */; };
+		371674A21E62144200D5B779 /* FilterModuleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 371674A11E62144200D5B779 /* FilterModuleViewController.swift */; };
 		37940B611E5A1E1900B5B860 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37940B601E5A1E1900B5B860 /* AppDelegate.swift */; };
 		37940B661E5A1E1900B5B860 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 37940B641E5A1E1900B5B860 /* Main.storyboard */; };
 		37940B681E5A1E1900B5B860 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 37940B671E5A1E1900B5B860 /* Assets.xcassets */; };
@@ -16,7 +21,7 @@
 		37B0A0211E5CD4DA0088D6FC /* DashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37B0A0201E5CD4DA0088D6FC /* DashboardViewController.swift */; };
 		37B0A0231E5CD81F0088D6FC /* ModuleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37B0A0221E5CD81F0088D6FC /* ModuleViewController.swift */; };
 		37EF42711E5B8CD3005EAB26 /* LightsModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37EF426E1E5B8CD3005EAB26 /* LightsModels.swift */; };
-		37EF42721E5B8CD3005EAB26 /* LightsModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37EF426F1E5B8CD3005EAB26 /* LightsModule.swift */; };
+		37EF42721E5B8CD3005EAB26 /* LightsEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37EF426F1E5B8CD3005EAB26 /* LightsEndpoint.swift */; };
 		37EF42731E5B8CD3005EAB26 /* LightsModuleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37EF42701E5B8CD3005EAB26 /* LightsModuleViewController.swift */; };
 		37EF42771E5B8D16005EAB26 /* SettingsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37EF42751E5B8D16005EAB26 /* SettingsManager.swift */; };
 		37EF42781E5B8D16005EAB26 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37EF42761E5B8D16005EAB26 /* SettingsViewController.swift */; };
@@ -97,6 +102,11 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		371674891E620CE400D5B779 /* ModuleEndpoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModuleEndpoint.swift; sourceTree = "<group>"; };
+		3716749B1E620F2C00D5B779 /* FilterEndpoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilterEndpoint.swift; sourceTree = "<group>"; };
+		3716749D1E620F5500D5B779 /* FilterModels.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilterModels.swift; sourceTree = "<group>"; };
+		3716749F1E6210D100D5B779 /* JSONInitializable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONInitializable.swift; sourceTree = "<group>"; };
+		371674A11E62144200D5B779 /* FilterModuleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilterModuleViewController.swift; sourceTree = "<group>"; };
 		37940B5D1E5A1E1900B5B860 /* fluval-manager.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "fluval-manager.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		37940B601E5A1E1900B5B860 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		37940B651E5A1E1900B5B860 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -107,7 +117,7 @@
 		37B0A0201E5CD4DA0088D6FC /* DashboardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DashboardViewController.swift; sourceTree = "<group>"; };
 		37B0A0221E5CD81F0088D6FC /* ModuleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModuleViewController.swift; sourceTree = "<group>"; };
 		37EF426E1E5B8CD3005EAB26 /* LightsModels.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LightsModels.swift; sourceTree = "<group>"; };
-		37EF426F1E5B8CD3005EAB26 /* LightsModule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LightsModule.swift; sourceTree = "<group>"; };
+		37EF426F1E5B8CD3005EAB26 /* LightsEndpoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LightsEndpoint.swift; sourceTree = "<group>"; };
 		37EF42701E5B8CD3005EAB26 /* LightsModuleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LightsModuleViewController.swift; sourceTree = "<group>"; };
 		37EF42751E5B8D16005EAB26 /* SettingsManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsManager.swift; sourceTree = "<group>"; };
 		37EF42761E5B8D16005EAB26 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
@@ -126,6 +136,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		371674801E620BA900D5B779 /* Filter */ = {
+			isa = PBXGroup;
+			children = (
+				3716749D1E620F5500D5B779 /* FilterModels.swift */,
+				3716749B1E620F2C00D5B779 /* FilterEndpoint.swift */,
+				371674A11E62144200D5B779 /* FilterModuleViewController.swift */,
+			);
+			path = Filter;
+			sourceTree = "<group>";
+		};
 		37940B541E5A1E1800B5B860 = {
 			isa = PBXGroup;
 			children = (
@@ -154,6 +174,7 @@
 				37EF42791E5B8E83005EAB26 /* Library */,
 				37EF42741E5B8D16005EAB26 /* Settings */,
 				37EF426D1E5B8CD3005EAB26 /* Lights */,
+				371674801E620BA900D5B779 /* Filter */,
 			);
 			path = "fluval-manager";
 			sourceTree = "<group>";
@@ -176,7 +197,7 @@
 			isa = PBXGroup;
 			children = (
 				37EF426E1E5B8CD3005EAB26 /* LightsModels.swift */,
-				37EF426F1E5B8CD3005EAB26 /* LightsModule.swift */,
+				37EF426F1E5B8CD3005EAB26 /* LightsEndpoint.swift */,
 				37EF42701E5B8CD3005EAB26 /* LightsModuleViewController.swift */,
 			);
 			path = Lights;
@@ -195,8 +216,10 @@
 			isa = PBXGroup;
 			children = (
 				37EF427A1E5B8E83005EAB26 /* EndpointRouter.swift */,
+				3716749F1E6210D100D5B779 /* JSONInitializable.swift */,
 				37B0A0201E5CD4DA0088D6FC /* DashboardViewController.swift */,
 				37B0A0221E5CD81F0088D6FC /* ModuleViewController.swift */,
+				371674891E620CE400D5B779 /* ModuleEndpoint.swift */,
 			);
 			path = Library;
 			sourceTree = "<group>";
@@ -334,15 +357,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3716748A1E620CE400D5B779 /* ModuleEndpoint.swift in Sources */,
+				3716749C1E620F2C00D5B779 /* FilterEndpoint.swift in Sources */,
 				37940B611E5A1E1900B5B860 /* AppDelegate.swift in Sources */,
 				37EF427B1E5B8E83005EAB26 /* EndpointRouter.swift in Sources */,
 				37B0A0231E5CD81F0088D6FC /* ModuleViewController.swift in Sources */,
 				37EF42711E5B8CD3005EAB26 /* LightsModels.swift in Sources */,
 				37EF42781E5B8D16005EAB26 /* SettingsViewController.swift in Sources */,
+				3716749E1E620F5500D5B779 /* FilterModels.swift in Sources */,
 				37EF42771E5B8D16005EAB26 /* SettingsManager.swift in Sources */,
-				37EF42721E5B8CD3005EAB26 /* LightsModule.swift in Sources */,
+				37EF42721E5B8CD3005EAB26 /* LightsEndpoint.swift in Sources */,
 				37EF42731E5B8CD3005EAB26 /* LightsModuleViewController.swift in Sources */,
 				37B0A0211E5CD4DA0088D6FC /* DashboardViewController.swift in Sources */,
+				371674A21E62144200D5B779 /* FilterModuleViewController.swift in Sources */,
+				371674A01E6210D100D5B779 /* JSONInitializable.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
