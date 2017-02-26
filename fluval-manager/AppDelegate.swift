@@ -30,9 +30,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             let filterModuleViewController = viewController.storyboard?.instantiateViewController(withIdentifier: "FilterModuleViewController") as! FilterModuleViewController
             filterModuleViewController.filterEndpoint = filterEndpoint
             
+            // heater
+            let heaterEndpoint = HeaterEndpoint(settingsManager: settingsManager)
+            let heaterModuleViewController = viewController.storyboard?.instantiateViewController(withIdentifier: "HeaterModuleViewController") as! HeaterModuleViewController
+            heaterModuleViewController.heaterEndpoint = heaterEndpoint
+            
+            // temperature
+            let temperatureEndpoint = TemperatureEndpoint(settingsManager: settingsManager)
+            let temperatureModuleViewController = viewController.storyboard?.instantiateViewController(withIdentifier: "TemperatureModuleViewController") as! TemperatureModuleViewController
+            temperatureModuleViewController.temperatureEndpoint = temperatureEndpoint
+            
             // build dashboard
             viewController.settingsManager = SettingsManager()
-            viewController.modulesViewControllers = [lightsModuleViewController, filterModuleViewController]
+            viewController.modulesViewControllers = [lightsModuleViewController, filterModuleViewController, temperatureModuleViewController, heaterModuleViewController]
         }
         return true
     }

@@ -43,15 +43,17 @@ final class DashboardViewController: UIViewController {
     }
     
     private func buildInterface() {
-        var previousController: UIViewController? = nil
         var totalHeight: CGFloat = 0
         
-        for controller in modulesViewControllers {
+        for (index, controller) in modulesViewControllers.enumerated() {
             addChildViewController(controller)
             scrollView.addSubview(controller.view)
-            controller.view.frame = CGRect(x: 0, y: previousController?.view.bounds.height ?? 0, width: scrollView.bounds.width, height: 140)
-            previousController = controller
+            let computedHeight = controller.view.systemLayoutSizeFitting(UILayoutFittingCompressedSize).height
+            controller.view.frame = CGRect(x: 0, y: totalHeight, width: scrollView.bounds.width, height: computedHeight)
             totalHeight += controller.view.bounds.height
+            if index % 2 != 0 {
+                controller.view.backgroundColor = UIColor.black.withAlphaComponent(0.03)
+            }
         }
         view.setNeedsLayout()
         scrollView.contentSize = CGSize(width: view.bounds.size.width, height: totalHeight)

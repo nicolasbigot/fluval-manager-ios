@@ -1,43 +1,43 @@
 //
-//  FilterModuleViewController.swift
+//  HeaterModuleViewController.swift
 //  fluval-manager
 //
-//  Created by Nicolas on 25/02/2017.
+//  Created by Nicolas on 26/02/2017.
 //  Copyright © 2017 Nicolas Bigot. All rights reserved.
 //
 
 import Foundation
 import UIKit
 
-final class FilterModuleViewController: ModuleViewController {
-
-    var filterEndpoint: FilterEndpoint!
+final class HeaterModuleViewController: ModuleViewController {
+    
+    var heaterEndpoint: HeaterEndpoint!
     @IBOutlet private weak var statusLabel: UILabel!
     @IBOutlet private weak var onLabel: UILabel!
     
     // MARK: - Actions
     
     @IBAction private func refreshButtonPressed() {
-        _ = filterEndpoint.fetch { module in
+        _ = heaterEndpoint.fetch { module in
             self.updateUI(module: module)
         }
     }
-
+    
     @IBAction private func startButtonPressed() {
-        _ = filterEndpoint.start { module in
+        _ = heaterEndpoint.start { module in
             self.updateUI(module: module)
         }
     }
     
     @IBAction private func stopButtonPressed() {
-        _ = filterEndpoint.stop { module in
+        _ = heaterEndpoint.stop { module in
             self.updateUI(module: module)
         }
     }
     
     // MARK : - View
     
-    private func updateUI(module: FilterModule? = nil) {
+    private func updateUI(module: HeaterModule? = nil) {
         if let module = module {
             self.statusLabel.text = module.status.description
             self.onLabel.text = module.status == .started ? "ON" : "OFF"
@@ -50,7 +50,7 @@ final class FilterModuleViewController: ModuleViewController {
         
         refreshButtonPressed()
     }
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         

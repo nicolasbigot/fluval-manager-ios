@@ -20,6 +20,12 @@
 		37940BA91E5A272800B5B860 /* Alamofire.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 37940B9B1E5A270300B5B860 /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		37B0A0211E5CD4DA0088D6FC /* DashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37B0A0201E5CD4DA0088D6FC /* DashboardViewController.swift */; };
 		37B0A0231E5CD81F0088D6FC /* ModuleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37B0A0221E5CD81F0088D6FC /* ModuleViewController.swift */; };
+		37BEBD9C1E63068C009207FC /* HeaderModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37BEBD9B1E63068C009207FC /* HeaderModels.swift */; };
+		37BEBD9E1E6306A8009207FC /* HeaterEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37BEBD9D1E6306A8009207FC /* HeaterEndpoint.swift */; };
+		37BEBDA01E6306C7009207FC /* HeaterModuleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37BEBD9F1E6306C7009207FC /* HeaterModuleViewController.swift */; };
+		37BEBDA31E630845009207FC /* TemperatureModuleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37BEBDA21E630845009207FC /* TemperatureModuleViewController.swift */; };
+		37BEBDA51E63086C009207FC /* TemperatureModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37BEBDA41E63086B009207FC /* TemperatureModels.swift */; };
+		37BEBDA71E630885009207FC /* TemperatureEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37BEBDA61E630885009207FC /* TemperatureEndpoint.swift */; };
 		37EF42711E5B8CD3005EAB26 /* LightsModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37EF426E1E5B8CD3005EAB26 /* LightsModels.swift */; };
 		37EF42721E5B8CD3005EAB26 /* LightsEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37EF426F1E5B8CD3005EAB26 /* LightsEndpoint.swift */; };
 		37EF42731E5B8CD3005EAB26 /* LightsModuleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37EF42701E5B8CD3005EAB26 /* LightsModuleViewController.swift */; };
@@ -116,6 +122,12 @@
 		37940B8F1E5A270300B5B860 /* Alamofire.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Alamofire.xcodeproj; path = "fluval-manager/Vendor/Alamofire/Alamofire.xcodeproj"; sourceTree = "<group>"; };
 		37B0A0201E5CD4DA0088D6FC /* DashboardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DashboardViewController.swift; sourceTree = "<group>"; };
 		37B0A0221E5CD81F0088D6FC /* ModuleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModuleViewController.swift; sourceTree = "<group>"; };
+		37BEBD9B1E63068C009207FC /* HeaderModels.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeaderModels.swift; sourceTree = "<group>"; };
+		37BEBD9D1E6306A8009207FC /* HeaterEndpoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeaterEndpoint.swift; sourceTree = "<group>"; };
+		37BEBD9F1E6306C7009207FC /* HeaterModuleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeaterModuleViewController.swift; sourceTree = "<group>"; };
+		37BEBDA21E630845009207FC /* TemperatureModuleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TemperatureModuleViewController.swift; sourceTree = "<group>"; };
+		37BEBDA41E63086B009207FC /* TemperatureModels.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TemperatureModels.swift; sourceTree = "<group>"; };
+		37BEBDA61E630885009207FC /* TemperatureEndpoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TemperatureEndpoint.swift; sourceTree = "<group>"; };
 		37EF426E1E5B8CD3005EAB26 /* LightsModels.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LightsModels.swift; sourceTree = "<group>"; };
 		37EF426F1E5B8CD3005EAB26 /* LightsEndpoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LightsEndpoint.swift; sourceTree = "<group>"; };
 		37EF42701E5B8CD3005EAB26 /* LightsModuleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LightsModuleViewController.swift; sourceTree = "<group>"; };
@@ -175,6 +187,8 @@
 				37EF42741E5B8D16005EAB26 /* Settings */,
 				37EF426D1E5B8CD3005EAB26 /* Lights */,
 				371674801E620BA900D5B779 /* Filter */,
+				37BEBD931E63067B009207FC /* Heater */,
+				37BEBDA11E630830009207FC /* Temperature */,
 			);
 			path = "fluval-manager";
 			sourceTree = "<group>";
@@ -191,6 +205,26 @@
 				37940BA71E5A270300B5B860 /* Alamofire.framework */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		37BEBD931E63067B009207FC /* Heater */ = {
+			isa = PBXGroup;
+			children = (
+				37BEBD9B1E63068C009207FC /* HeaderModels.swift */,
+				37BEBD9D1E6306A8009207FC /* HeaterEndpoint.swift */,
+				37BEBD9F1E6306C7009207FC /* HeaterModuleViewController.swift */,
+			);
+			path = Heater;
+			sourceTree = "<group>";
+		};
+		37BEBDA11E630830009207FC /* Temperature */ = {
+			isa = PBXGroup;
+			children = (
+				37BEBDA41E63086B009207FC /* TemperatureModels.swift */,
+				37BEBDA61E630885009207FC /* TemperatureEndpoint.swift */,
+				37BEBDA21E630845009207FC /* TemperatureModuleViewController.swift */,
+			);
+			path = Temperature;
 			sourceTree = "<group>";
 		};
 		37EF426D1E5B8CD3005EAB26 /* Lights */ = {
@@ -358,6 +392,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				3716748A1E620CE400D5B779 /* ModuleEndpoint.swift in Sources */,
+				37BEBDA31E630845009207FC /* TemperatureModuleViewController.swift in Sources */,
+				37BEBD9C1E63068C009207FC /* HeaderModels.swift in Sources */,
 				3716749C1E620F2C00D5B779 /* FilterEndpoint.swift in Sources */,
 				37940B611E5A1E1900B5B860 /* AppDelegate.swift in Sources */,
 				37EF427B1E5B8E83005EAB26 /* EndpointRouter.swift in Sources */,
@@ -365,12 +401,16 @@
 				37EF42711E5B8CD3005EAB26 /* LightsModels.swift in Sources */,
 				37EF42781E5B8D16005EAB26 /* SettingsViewController.swift in Sources */,
 				3716749E1E620F5500D5B779 /* FilterModels.swift in Sources */,
+				37BEBDA01E6306C7009207FC /* HeaterModuleViewController.swift in Sources */,
+				37BEBD9E1E6306A8009207FC /* HeaterEndpoint.swift in Sources */,
 				37EF42771E5B8D16005EAB26 /* SettingsManager.swift in Sources */,
 				37EF42721E5B8CD3005EAB26 /* LightsEndpoint.swift in Sources */,
 				37EF42731E5B8CD3005EAB26 /* LightsModuleViewController.swift in Sources */,
 				37B0A0211E5CD4DA0088D6FC /* DashboardViewController.swift in Sources */,
 				371674A21E62144200D5B779 /* FilterModuleViewController.swift in Sources */,
+				37BEBDA51E63086C009207FC /* TemperatureModels.swift in Sources */,
 				371674A01E6210D100D5B779 /* JSONInitializable.swift in Sources */,
+				37BEBDA71E630885009207FC /* TemperatureEndpoint.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

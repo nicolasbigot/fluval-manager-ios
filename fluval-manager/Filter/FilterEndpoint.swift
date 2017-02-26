@@ -7,8 +7,6 @@
 //
 
 import Foundation
-
-import Foundation
 import Alamofire
 
 final class FilterEndpoint: ModuleEndpoint<FilterModule> {
