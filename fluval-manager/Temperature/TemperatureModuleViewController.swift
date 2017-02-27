@@ -40,7 +40,7 @@ final class TemperatureModuleViewController: ModuleViewController {
     private func updateUI(module: TemperatureModule? = nil) {
         if let module = module {
             self.statusLabel.text = module.status.description
-            self.temperatureLabel.text = "0.0°C"
+            self.temperatureLabel.text = "\(round(module.temperature * 10) / 10)°C"
             module.status == .started ? enableUI() : disableUI()
         }
     }
