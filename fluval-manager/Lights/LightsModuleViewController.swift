@@ -62,6 +62,12 @@ final class LightsModuleViewController: ModuleViewController {
     
     // MARK : - View
 
+    override func updateModuleInfo() {
+        super.updateModuleInfo()
+        
+        refreshButtonPressed()
+    }
+    
     private func updateUI(module: LightsModule? = nil) {
         if let module = module {
             self.modeLabel.text = module.mode != nil ? module.mode!.description : "--"
@@ -70,13 +76,7 @@ final class LightsModuleViewController: ModuleViewController {
             module.status == .started ? enableUI() : disableUI()
         }
     }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        
-        refreshButtonPressed()
-    }
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         

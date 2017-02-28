@@ -19,4 +19,8 @@ class ModuleViewController: UIViewController {
         self.view.alpha = 1.0
     }
     
+    func updateModuleInfo() {
+        
+    }
+    
 }

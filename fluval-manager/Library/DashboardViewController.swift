@@ -13,6 +13,8 @@ final class DashboardViewController: UIViewController {
     
     var settingsManager: SettingsManager!
     var modulesViewControllers: [ModuleViewController] = []
+    private var updateTimer: Timer? = nil
+    @IBOutlet private weak var updateLabel: UILabel!
     
     @IBOutlet private weak var scrollView: UIScrollView!
     private static let showSettingsViewControllerIdentifier = "ShowSettingsViewController"
@@ -34,12 +36,35 @@ final class DashboardViewController: UIViewController {
         if !settingsManager.isSetup {
             performSegue(withIdentifier: type(of: self).showSettingsViewControllerIdentifier, sender: nil)
         }
+        
+        // update view controllers
+        updateModuleViewController()
+        
+        // setup timer
+        updateTimer = Timer.scheduledTimer(withTimeInterval: 30, repeats: true, block: { _ in
+            self.updateModuleViewController()
+        })
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        
+        updateTimer?.invalidate(); updateTimer = nil
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         buildInterface()
+    }
+    
+    private func updateModuleViewController() {
+        modulesViewControllers.forEach({ $0.updateModuleInfo() })
+        let dateFormatter = DateFormatter()
+        dateFormatter.locale = NSLocale.current
+        dateFormatter.dateStyle = .medium
+        dateFormatter.timeStyle = .medium
+        updateLabel.text = "Last update: \(dateFormatter.string(from: Date()))"
     }
     
     private func buildInterface() {

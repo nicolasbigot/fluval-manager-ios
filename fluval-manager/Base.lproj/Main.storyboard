@@ -29,7 +29,7 @@
         <!--Fluval Manager-->
         <scene sceneID="DzS-wV-DmH">
             <objects>
-                <viewController id="btA-lT-V9n" customClass="DashboardViewController" customModule="fluval_manager" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="btA-lT-V9n" customClass="DashboardViewController" customModule="fluval_manager" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="ZMz-gc-NDZ"/>
                         <viewControllerLayoutGuide type="bottom" id="Z2m-C9-S5C"/>
@@ -39,15 +39,23 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XHb-CX-FJH">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <rect key="frame" x="0.0" y="86.5" width="375" height="580.5"/>
                             </scrollView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="_last_update_" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="weX-A7-eF5">
+                                <rect key="frame" x="150.5" y="72" width="75.5" height="14.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="XHb-CX-FJH" secondAttribute="trailing" id="8X0-wS-wvE"/>
-                            <constraint firstItem="XHb-CX-FJH" firstAttribute="bottom" secondItem="Z2m-C9-S5C" secondAttribute="top" id="JHj-6h-czu"/>
-                            <constraint firstItem="XHb-CX-FJH" firstAttribute="leading" secondItem="nBF-vH-B1A" secondAttribute="leading" id="ZAF-tX-DcE"/>
-                            <constraint firstItem="XHb-CX-FJH" firstAttribute="top" secondItem="nBF-vH-B1A" secondAttribute="top" id="bMV-Vc-6AI"/>
+                            <constraint firstItem="XHb-CX-FJH" firstAttribute="centerX" secondItem="weX-A7-eF5" secondAttribute="centerX" id="8YH-Yv-aAk"/>
+                            <constraint firstItem="weX-A7-eF5" firstAttribute="top" secondItem="ZMz-gc-NDZ" secondAttribute="bottom" constant="8" symbolic="YES" id="TcB-nS-dt3"/>
+                            <constraint firstItem="XHb-CX-FJH" firstAttribute="leading" secondItem="nBF-vH-B1A" secondAttribute="leading" id="hVl-jv-cDA"/>
+                            <constraint firstItem="XHb-CX-FJH" firstAttribute="bottom" secondItem="Z2m-C9-S5C" secondAttribute="top" id="oMh-gE-aVf"/>
+                            <constraint firstItem="XHb-CX-FJH" firstAttribute="top" secondItem="weX-A7-eF5" secondAttribute="bottom" id="vJG-AA-E96"/>
+                            <constraint firstAttribute="trailing" secondItem="XHb-CX-FJH" secondAttribute="trailing" id="yAT-hc-IGP"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Fluval Manager" id="WcJ-oB-IV4">
@@ -59,11 +67,12 @@
                     </navigationItem>
                     <connections>
                         <outlet property="scrollView" destination="XHb-CX-FJH" id="oM7-cO-gwq"/>
+                        <outlet property="updateLabel" destination="weX-A7-eF5" id="hOo-RW-2XM"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CrK-X6-FyI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="131" y="143"/>
+            <point key="canvasLocation" x="222" y="143"/>
         </scene>
         <!--Settings-->
         <scene sceneID="AIt-dX-XwM">

@@ -37,18 +37,18 @@ final class TemperatureModuleViewController: ModuleViewController {
     
     // MARK : - View
     
+    override func updateModuleInfo() {
+        super.updateModuleInfo()
+        
+        refreshButtonPressed()
+    }
+    
     private func updateUI(module: TemperatureModule? = nil) {
         if let module = module {
             self.statusLabel.text = module.status.description
             self.temperatureLabel.text = "\(round(module.temperature * 10) / 10)°C"
             module.status == .started ? enableUI() : disableUI()
         }
-    }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        
-        refreshButtonPressed()
     }
     
     override func viewDidLoad() {

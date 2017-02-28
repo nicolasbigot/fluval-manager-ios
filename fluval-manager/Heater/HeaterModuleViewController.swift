@@ -37,18 +37,18 @@ final class HeaterModuleViewController: ModuleViewController {
     
     // MARK : - View
     
+    override func updateModuleInfo() {
+        super.updateModuleInfo()
+        
+        refreshButtonPressed()
+    }
+    
     private func updateUI(module: HeaterModule? = nil) {
         if let module = module {
             self.statusLabel.text = module.status.description
             self.onLabel.text = module.status == .started ? "ON" : "OFF"
             module.status == .started ? enableUI() : disableUI()
         }
-    }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        
-        refreshButtonPressed()
     }
     
     override func viewDidLoad() {
